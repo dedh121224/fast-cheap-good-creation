@@ -1,0 +1,134 @@
+:root {
+    --switch-width: 60px;
+    --switch-height: 34px;
+    --circle-widthAndHeight: 320px;
+    --color-top:#ff0000;
+    --color-left:#00ff00;
+    --color-right:#0000ff;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+.initPosition {
+    position: relative;
+    height: 259px;
+    width: 300px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: var(--switch-width);
+    height: var(--switch-height);
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .5s;
+    transition: .5s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .5s;
+    transition: .5s;
+}
+
+/* input:checked+.slider {
+    background-color: #2196F3;
+}
+
+input:focus+.slider {
+    box-shadow: 0 0 1px #2196F3;
+} */
+
+input:checked+.topSlider {
+    background-color: var(--color-top);
+}
+
+input:focus+.topSlider {
+    box-shadow: 0 0 1px var(--color-top);
+}
+
+input:checked+.leftSlider {
+    background-color: var(--color-left);
+}
+
+input:focus+.leftSlider {
+    box-shadow: 0 0 1px var(--color-left);
+}
+
+input:checked+.rightSlider {
+    background-color: var(--color-right);
+}
+
+input:focus+.rightSlider {
+    box-shadow: 0 0 1px var(--color-right);
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+.topPosition {
+    position: absolute;
+    left: calc(50% - var(--switch-width)/2);
+}
+
+.circle {
+    position: absolute;
+    top: calc(0px - var(--circle-widthAndHeight)/2 + var(--switch-height)/2);
+    left: calc(0px - var(--circle-widthAndHeight)/2 + var(--switch-width)/2);
+    height: var(--circle-widthAndHeight);
+    width: var(--circle-widthAndHeight);
+    border-radius: 50%;
+}
+
+.topCircle{
+    border: 1px dotted var(--color-top);
+}
+
+.leftCircle{
+    border: 1px dotted var(--color-left);
+}
+
+.rightCircle{
+    border: 1px dotted var(--color-right);
+}
+
+.leftPosition {
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+}
+
+.rightPosition {
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+}
