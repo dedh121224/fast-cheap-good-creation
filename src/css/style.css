@@ -138,3 +138,5 @@ input:checked+.slider:before {
     top: calc(0px - var(--switch-height)/2 - 35px);    
     font-size: xx-large;
 }
+
+#particles-js{ position:absolute; width: 97%; height: 97%; background-color: #ffffff; background-image: url(""); background-repeat: no-repeat; background-size: cover; background-position: 50% 50%; }
