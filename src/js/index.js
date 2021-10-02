@@ -1,4 +1,9 @@
 let mockMouseAutoClick = true
+let root = undefined
+let rootStyles = undefined
+let activeColor = undefined
+let inactiveColor = undefined
+
 const StopMockMouseAutoClick = () => {
     mockMouseAutoClick = false
 }
@@ -30,8 +35,10 @@ const SetCheckBoxListener = () => {
     const input = document.querySelectorAll('.checkBox')
     for (let i = 0; i < input.length; i++) {
         input[i].addEventListener('change', e => {
+            SetSubTitle()
             if (e.target.checked) {
                 SetCheckedCheckBoxLessThanTwo(e.target.getAttribute('data-number'))
+                SetSubTitle()
             }
         })
     }
@@ -40,7 +47,8 @@ const Init = () => {
     setTimeout(() => {
         $('body').mousedown(StopMockMouseAutoClick)
         SetCheckBoxListener()
-    }, 1000)
+        GetCssStyle()
+    }, 100)
 }
 const SetCheckedCheckBoxLessThanTwo = (number) => {
     let checkedCheckBoxArray = GetCheckedCheckBoxArray().filter(e => e[0].getAttribute('data-number') != number)
@@ -50,4 +58,36 @@ const SetCheckedCheckBoxLessThanTwo = (number) => {
     let randomInt = Math.floor(Math.random() * 2)
     SetCheckBox(checkedCheckBoxArray[randomInt], false)
 }
+const SetSubTitle = () => {
+    if ($('#topCheckBox').prop('checked')) {
+        $(".switchSubTitleBotttom").hide()
+        ;[($(".switchTitleTop")), ($(".switchSubTitleLeft")), ($(".switchSubTitleRight"))]
+            .forEach(e => SetTitleActiveColor(e, true))
+    } else {
+        $(".switchSubTitleBotttom").show()
+        ;[($(".switchTitleTop")), ($(".switchSubTitleLeft")), ($(".switchSubTitleRight"))]
+            .forEach(e => SetTitleActiveColor(e, false))
+    }
+    if ($('#leftCheckBox').prop('checked')) {
+        $(".switchSubTitleRight").hide()
+    } else {
+        $(".switchSubTitleRight").show()
+    }
+    if ($('#rightCheckBox').prop('checked')) {
+        $(".switchSubTitleLeft").hide()
+    } else {
+        $(".switchSubTitleLeft").show()
+    }
+}
+const SetTitleActiveColor = (target, active) => {
+    let color = active ? activeColor : inactiveColor
+    target.css('color', color)
+}
+const GetCssStyle = () => {
+    root = document.querySelector(':root')
+    rootStyles = getComputedStyle(root)
+    activeColor = rootStyles.getPropertyValue('--color-title-active')
+    inactiveColor = rootStyles.getPropertyValue('--color-title-imactive')
+}
+
 Init()

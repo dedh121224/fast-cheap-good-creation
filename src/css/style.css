@@ -1,10 +1,14 @@
 :root {
     --switch-width: 60px;
     --switch-height: 34px;
-    --circle-widthAndHeight: 320px;
+    --circle-widthAndHeight: 360px;
     --color-top:#ff0000;
     --color-left:#00ff00;
     --color-right:#0000ff;
+    --square-height:259px;
+    --square-width:300px;
+    --color-title-active:#000000;
+    --color-title-inactive:#aaaaaa;
 }
 
 html,
@@ -14,8 +18,9 @@ body {
 
 .initPosition {
     position: relative;
-    height: 259px;
-    width: 300px;
+    height: var(--square-height);
+    width: var(--square-width);
+    /* border: solid; */
 }
 
 .switch {
@@ -137,6 +142,19 @@ input:checked+.slider:before {
     position: absolute;
     top: calc(0px - var(--switch-height)/2 - 35px);    
     font-size: xx-large;
+    color: var(--color-title-inactive);
+}
+
+.switchSubTitle{
+    position: absolute;    
+    font-size: x-large;
+    color: var(--color-title-inactive);
+}
+.switchSubTitleBotttom{
+    top: calc(0px - var(--switch-height) + var(--square-height));    
+}
+.switchSubTitleNotBotttom{
+    top: calc(0px - var(--square-height)/2);    
 }
 
 #particles-js{ position:absolute; width: 97%; height: 97%; background-color: #ffffff; background-image: url(""); background-repeat: no-repeat; background-size: cover; background-position: 50% 50%; }
