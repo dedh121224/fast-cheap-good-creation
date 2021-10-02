@@ -148,8 +148,9 @@ input:checked+.slider:before {
 .switchSubTitle{
     position: absolute;    
     font-size: x-large;
-    color: var(--color-title-inactive);
+    color: var(--color-title-active);
 }
+
 .switchSubTitleBotttom{
     top: calc(0px - var(--switch-height) + var(--square-height));    
 }

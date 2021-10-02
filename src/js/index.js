@@ -48,6 +48,9 @@ const Init = () => {
         $('body').mousedown(StopMockMouseAutoClick)
         SetCheckBoxListener()
         GetCssStyle()
+        $('#topCheckBox').prop('checked', false)
+        $('#leftCheckBox').prop('checked', false)
+        $('#rightCheckBox').prop('checked', false)
     }, 100)
 }
 const SetCheckedCheckBoxLessThanTwo = (number) => {
@@ -61,22 +64,24 @@ const SetCheckedCheckBoxLessThanTwo = (number) => {
 const SetSubTitle = () => {
     if ($('#topCheckBox').prop('checked')) {
         $(".switchSubTitleBotttom").hide()
-        ;[($(".switchTitleTop")), ($(".switchSubTitleLeft")), ($(".switchSubTitleRight"))]
-            .forEach(e => SetTitleActiveColor(e, true))
+        SetTitleActiveColor($(".switchTitleTop"), true)
     } else {
         $(".switchSubTitleBotttom").show()
-        ;[($(".switchTitleTop")), ($(".switchSubTitleLeft")), ($(".switchSubTitleRight"))]
-            .forEach(e => SetTitleActiveColor(e, false))
+        SetTitleActiveColor($(".switchTitleTop"), false)
     }
     if ($('#leftCheckBox').prop('checked')) {
         $(".switchSubTitleRight").hide()
+        SetTitleActiveColor($(".switchTitleLeft"), true)
     } else {
         $(".switchSubTitleRight").show()
+        SetTitleActiveColor($(".switchTitleLeft"), false)
     }
     if ($('#rightCheckBox').prop('checked')) {
         $(".switchSubTitleLeft").hide()
+        SetTitleActiveColor($(".switchTitleRigth"), true)
     } else {
         $(".switchSubTitleLeft").show()
+        SetTitleActiveColor($(".switchTitleRigth"), false)
     }
 }
 const SetTitleActiveColor = (target, active) => {
