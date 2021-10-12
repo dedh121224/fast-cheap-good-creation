@@ -24,7 +24,7 @@
         --color-title-inactive:#aaaaaa;
     }
   }
-/* @media screen and (max-width: 720px) {
+@media screen and (max-width: 720px) {
     :root {
         --switch-width: 60px;
         --switch-height: 34px;
@@ -37,7 +37,7 @@
         --color-title-active:#000000;
         --color-title-inactive:#aaaaaa;
     }
-  } */
+  }
 
 html,
 body {
