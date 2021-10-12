@@ -10,6 +10,34 @@
     --color-title-active:#000000;
     --color-title-inactive:#aaaaaa;
 }
+@media screen and (max-width: 800px) {
+    :root {
+        --switch-width: 60px;
+        --switch-height: 34px;
+        --circle-widthAndHeight: 300px;
+        --color-top:#ff0000;
+        --color-left:#00ff00;
+        --color-right:#0000ff;
+        --square-height:216px;
+        --square-width:250px;
+        --color-title-active:#000000;
+        --color-title-inactive:#aaaaaa;
+    }
+  }
+/* @media screen and (max-width: 720px) {
+    :root {
+        --switch-width: 60px;
+        --switch-height: 34px;
+        --circle-widthAndHeight: 240px;
+        --color-top:#ff0000;
+        --color-left:#00ff00;
+        --color-right:#0000ff;
+        --square-height:173px;
+        --square-width:200px;
+        --color-title-active:#000000;
+        --color-title-inactive:#aaaaaa;
+    }
+  } */
 
 html,
 body {
