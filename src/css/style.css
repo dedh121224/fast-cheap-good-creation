@@ -24,9 +24,11 @@
         --square-width:250px;
         --color-title-active:#000000;
         --color-title-inactive:#aaaaaa;
+        --offset-sub-title-left:20px;
+        --offset-sub-title-right:-20px;
     }
   }
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 600px) {
     :root {
         --switch-width: 60px;
         --switch-height: 34px;
