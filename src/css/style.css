@@ -9,6 +9,8 @@
     --square-width:300px;
     --color-title-active:#000000;
     --color-title-inactive:#aaaaaa;
+    --offset-sub-title-left:50px;
+    --offset-sub-title-right:-70px;
 }
 @media screen and (max-width: 800px) {
     :root {
@@ -36,6 +38,8 @@
         --square-width:200px;
         --color-title-active:#000000;
         --color-title-inactive:#aaaaaa;
+        --offset-sub-title-left:10px;
+        --offset-sub-title-right:-10px;
     }
   }
 
@@ -186,4 +190,11 @@ input:checked+.slider:before {
     top: calc(0px - var(--square-height)/2);    
 }
 
+.switchSubTitleLeft{
+    left:var(--offset-sub-title-left) ;
+}
+
+.switchSubTitleRight{
+    left:var(--offset-sub-title-right) ;
+}
 #particles-js{ position:absolute; width: 97%; height: 97%; background-color: #ffffff; background-image: url(""); background-repeat: no-repeat; background-size: cover; background-position: 50% 50%; }
