@@ -65,10 +65,9 @@ const Init = () => {
         $('#rightCheckBox').prop('checked', false)
     }, 100)
 }
-const SetCheckedCheckBoxLessThanTwo = (number) => {
 
 // 設定勾選的 checkbox 小於等於 2
-const SetCheckedCheckBoxLessThanTwo= (number) => {
+const SetCheckedCheckBoxLessThanTwo = (number) => {
     let checkedCheckBoxArray = GetCheckedCheckBoxArray().filter(e => e[0].getAttribute('data-number') != number)
     if (checkedCheckBoxArray.length <= 1) {
         return
