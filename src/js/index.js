@@ -78,28 +78,17 @@ const SetCheckedCheckBoxLessThanTwo = (number) => {
 
 // 設定子標題
 const SetSubTitle = () => {
-    if ($('#topCheckBox').prop('checked')) {
-        $(".switchSubTitleBotttom").hide()
-        SetTitleActiveColor($(".switchTitleTop"), true)
-    } else {
-        $(".switchSubTitleBotttom").show()
-        SetTitleActiveColor($(".switchTitleTop"), false)
-    }
-    if ($('#leftCheckBox').prop('checked')) {
-        $(".switchSubTitleRight").hide()
-        SetTitleActiveColor($(".switchTitleLeft"), true)
-    } else {
-        $(".switchSubTitleRight").show()
-        SetTitleActiveColor($(".switchTitleLeft"), false)
-    }
-    if ($('#rightCheckBox').prop('checked')) {
-        $(".switchSubTitleLeft").hide()
-        SetTitleActiveColor($(".switchTitleRigth"), true)
-    } else {
-        $(".switchSubTitleLeft").show()
-        SetTitleActiveColor($(".switchTitleRigth"), false)
-    }
+    const topChecked = $('#topCheckBox').prop('checked')
+    const leftChecked = $('#leftCheckBox').prop('checked')
+    const rightChecked = $('#rightCheckBox').prop('checked')
+    $(".switchSubTitleBotttom").toggle(!topChecked)
+    $(".switchSubTitleRight").toggle(!leftChecked)
+    $(".switchSubTitleLeft").toggle(!rightChecked)
+    SetTitleActiveColor($(".switchTitleTop"), topChecked)
+    SetTitleActiveColor($(".switchTitleLeft"), leftChecked)
+    SetTitleActiveColor($(".switchTitleRigth"), rightChecked)
 }
+
 
 // 設定標題顏色
 const SetTitleActiveColor = (target, active) => {
